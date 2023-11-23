@@ -2,8 +2,8 @@ const https = require('https');
 const fs = require('fs');
 
 const options = {
-  key: fs.readFileSync('C:\Users\Administrator\Downloads\backend\backend\node_modules\node-gyp\test\fixtures\server.key'),
-  cert: fs.readFileSync('C:\Users\Administrator\Downloads\backend\backend\node_modules\node-gyp\test\fixtures\server.crt'),
+  key: fs.readFileSync('C:\\Users\\Administrator\\Downloads\\backend\\backend\\node_modules\\node-gyp\\test\\fixtures\\server.key'),
+  cert: fs.readFileSync('C:\\Users\\Administrator\\Downloads\\backend\\backend\\node_modules\\node-gyp\\test\\fixtures\\server.crt'),
 };
 
 const server = https.createServer(options, (req, res) => {
