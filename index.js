@@ -1,8 +1,7 @@
-var http = require("http");
+const http = require("http");
 
 http.createServer((req, res) => {
     console.log(`Received request for: ${req.url}`);
-
     res.writeHead(200, { "Content-Type": "text/html" });
 
     if (req.url === "/") {
@@ -11,6 +10,6 @@ http.createServer((req, res) => {
     }
 
     res.end();
-}).listen(3000, () => {
+}).listen(3000, "0.0.0.0", () => {
     console.log("Server listening on port 3000");
 });
