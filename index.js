@@ -1,15 +1,15 @@
-const http = require("http");
+const https = require('https');
+const fs = require('fs');
 
-http.createServer((req, res) => {
-    console.log(`Received request for: ${req.url}`);
-    res.writeHead(200, { "Content-Type": "text/html" });
+const options = {
+  key: fs.readFileSync('C:/Users/Administrator/Downloads/backend/backend/node_modules/node-gyp/test/fixtures/server.key'),
+  cert: fs.readFileSync('C:/Users/Administrator/Downloads/backend/backend/node_modules/node-gyp/test/fixtures/server.crt'),
+};
 
-    if (req.url === "/") {
-        console.log("Responding with 'Olá Mundo'");
-        res.write("<h1>Olá Mundo</h1>");
-    }
+const server = https.createServer(options, (req, res) => {
+  // Lógica do seu servidor
+});
 
-    res.end();
-}).listen(3000, "0.0.0.0", () => {
-    console.log("Server listening on port 3000");
+server.listen(3000, () => {
+  console.log('Servidor HTTPS está escutando na porta 3000');
 });
