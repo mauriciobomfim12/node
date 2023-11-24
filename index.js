@@ -10,6 +10,8 @@ const server = https.createServer(options, (req, res) => {
   // Lógica do seu servidor
 });
 
-server.listen(3000, () => {
-  console.log('Servidor HTTPS está escutando na porta 3000');
+// O segundo argumento para listen é o endereço IP ao qual você deseja vincular
+// Se você deseja ouvir em todas as interfaces, use '0.0.0.0'
+server.listen(3000, '0.0.0.0', () => {
+  console.log('Servidor HTTPS está escutando na porta 3000 em todas as interfaces');
 });
