@@ -1,9 +1,13 @@
-const https = require('http');
+const http = require('http');
 
-https.createServer((req, res) => {
-  if(req.url == "/"){
-    res.write("<h1>ola mundo</h1>")
+http.createServer((req, res) => {
+  console.log(`Received request for: ${req.url}`);
+
+  if (req.url === "/") {
+    console.log("Responding with 'Olá Mundo'");
+    res.write("<h1>Olá Mundo</h1>");
+    res.end();
   }
-}).listen(3333,'0.0.0.0', () => {
-  console.log('Servidor HTTPS está escutando na porta 3000 em todas as interfaces');
+}).listen(3333, '0.0.0.0', () => {
+  console.log('Servidor HTTP está escutando na porta 3333 em todas as interfaces');
 });
